@@ -1,0 +1,17 @@
+{
+  "name": "word_generator",
+  "version": "1.0.0",
+  "description": "Given a set of letters, generate all the possible words.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Daryl Aranha",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^3.0.0"
+  },
+  "dependencies": {
+    "urban-dictionary": "^2.2.1"
+  }
+}
