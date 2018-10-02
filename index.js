@@ -3,6 +3,9 @@ const ud = require('urban-dictionary');
 var words = document.getElementById("word");
 var btn = document.getElementById("btn");
 var display = document.getElementById("display");
+var ul = document.getElementById("listDisplay");
+var li;
+let wordArray = [];
 
 btn.addEventListener('click', () => {
     var word = words.value.split(" ");
@@ -10,11 +13,12 @@ btn.addEventListener('click', () => {
 })
 
 function getDefinition(definition) {
+    let wd, def;
     ud.term(definition).then((result) => {
         const entries = result.entries
-        let wd = entries[0].word;
-        let definition = entries[0].definition;
-        console.log(entries[0].word);
+        wd = entries[0].word;
+        def = entries[0].definition;
+        wordArray.push(wd);
     }).catch((error) => {
         // console.error(error.message)
     })
@@ -25,7 +29,7 @@ function swap(x,y){
 }
 
 function permute(str,l,r){
-    let i;
+    let i, wd;
     if(l==r) {
         getDefinition(str.join(''));
     }
@@ -38,10 +42,23 @@ function permute(str,l,r){
     }
 }
 
+function generateHTMLLi() {
+    if(wordArray.length>0){
+        for(let i = 0; i < wordArray.length; i++) {
+            li = document.createElement('li');
+            console.log(wordArray[i]);
+            li.innerText = wordArray[i];
+            ul.append(li);
+        }
+    }
+}
+
 function calculatePermutation(arr) {
+    li = null;
     for(let i = 2; i<=arr.length; i++){
         let singleCombination = arr.slice(0, i);
         permute(singleCombination, 0, (singleCombination.length)-1);
     }
+    generateHTMLLi();
 }
 

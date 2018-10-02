@@ -7,16 +7,23 @@
    </head>
    
    <body>
-       <header>
-            <h1>Welcome to word generator</h1>
-       </header>
+       <div class = "header">
+            <a href="#default" class="logo">Word Generator</a>
+            <div class="header-right">
+                <a class="active" href="#home">Word</a>
+                <a href="#contact">Definition</a>
+                <a href="#about">About</a>
+            </div>
+       </div>
         <div class = "container">
             <div class = "input-area">
-                <input type="text" placeholder="Input your name" id = "word" />
-                <button id= "btn"> Submit </button>
+                <input type="text" class = "w3-input" placeholder="Input your name" id = "word" />
+                <button id= "btn" class = "button"> Submit </button>
             </div>
             <div id = "display" class = "display-area">
-                
+                <ul id = "listDisplay"> 
+
+                </ul>
             </div>
         </div>
 
