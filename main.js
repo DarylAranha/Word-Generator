@@ -4,8 +4,8 @@ function createWindow(){
     win = new BrowserWindow();
     win.loadFile("index.html");
     win.on('closed', () => {
-        win = null;
     })
+    win = null;
 }
 
 app.on('ready', createWindow);
