@@ -2,7 +2,6 @@ const {app, BrowserWindow} = require('electron');
 
 function createWindow(){
     win = new BrowserWindow();
-    win.webContents.openDevTools();
     win.loadFile("index.html");
     win.on('closed', () => {
         win = null;
