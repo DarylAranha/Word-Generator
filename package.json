@@ -9,7 +9,7 @@
   "author": "Daryl Aranha",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^3.0.0"
+    "electron": "^9.2.0"
   },
   "dependencies": {
     "urban-dictionary": "^2.2.1"
